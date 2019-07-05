@@ -45,7 +45,9 @@ class FieldElement:
 
     # Please note that exponent does not need to be a member of finite field
     def __pow__(self, exponent):
-        n = exponent % (self.prime - 1)  # <1>
+        # Please note that exponent does not need to be a member of finite field
+        # It is done only to reduce exponent (helpful for large or negative exponents)
+        n = exponent % (self.prime - 1)
         num = pow(self.num, n, self.prime)
         return self.__class__(num, self.prime)
 

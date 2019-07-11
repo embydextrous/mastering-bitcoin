@@ -55,9 +55,9 @@ class Point:
         # When two points are same, the line is tangent to the curve
         if self == other:
             # Special case when the tangent is vertical
-            if self.y == 0 * self.x:
-                return self.__class__(None, None, self.a, self.b)
-            m = (3 * self.x ** 2 + self.a) / (2 * self.y)  # Calculate slope
-            x = m ** 2 - 2 * self.x
+            #if self.y == 0 * self.x:
+            #    return self.__class__(None, None, self.a, self.b)
+            m = (self.x ** 2 + self.x ** 2 + self.x ** 2 + self.a) / (self.y + self.y)  # Calculate slope
+            x = m ** 2 - self.x - self.x
             y = m * (self.x - x) - self.y
             return self.__class__(x, y, self.a, self.b)
